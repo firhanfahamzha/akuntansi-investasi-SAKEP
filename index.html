@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Modul interaktif Akuntansi Investasi berdasarkan SAK EP, SAK ETAP, dan PSAK 71/IFRS 9." />
+<title>Akuntansi Investasi — SAK EP Interaktif</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234F46E5'/%3E%3Cpath d='M20 44V24l12-8 12 8v20H32V32h-4v12z' fill='%23FBBF24'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar no-print">
+  <div class="nav-wrap">
+    <a href="#/" class="brand">
+      <span class="brand-icon">📘</span>
+      <span class="brand-text">Investasi SAK EP</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#/" data-route="/">Beranda</a>
+      <a href="#/bab" data-route="/bab">Bab</a>
+      <a href="#/flashcard" data-route="/flashcard">Flashcard</a>
+      <a href="#/quiz" data-route="/quiz">Quiz</a>
+      <a href="#/simulator" data-route="/simulator">Simulator</a>
+      <a href="#/glosarium" data-route="/glosarium">Glosarium</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Cari">🔍</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Ubah tema">🌙</button>
+      <button class="icon-btn mobile-only" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="overlay" id="searchOverlay">
+  <div class="overlay-box">
+    <div class="overlay-head">
+      <input type="text" id="searchInput" placeholder="Cari topik, istilah, atau bab..." autocomplete="off" />
+      <button class="icon-btn" id="searchClose">✕</button>
+    </div>
+    <div class="overlay-body" id="searchResults">
+      <p class="muted">Ketik untuk mencari...</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LAYOUT ============ -->
+<div class="layout">
+  <aside class="sidebar no-print" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-section">
+        <h4>📍 Daftar Isi</h4>
+        <ul class="toc-list" id="tocList"></ul>
+      </div>
+      <div class="sidebar-section">
+        <h4>🧮 Kalkulator Cepat</h4>
+        <div class="quick-calc">
+          <label>Nilai Investasi (Rp)
+            <input type="number" id="qcNilai" placeholder="1000000" />
+          </label>
+          <label>Suku Bunga (%)
+            <input type="number" id="qcBunga" placeholder="6" step="0.01" />
+          </label>
+          <label>Lama (tahun)
+            <input type="number" id="qcLama" placeholder="5" />
+          </label>
+          <button class="btn btn-sm btn-primary" id="qcHitung">Hitung Bunga</button>
+          <div class="quick-result" id="qcHasil"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main" id="main">
+    <div id="app"></div>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer no-print">
+  <div class="footer-inner">
+    <p><strong>Modul Interaktif Akuntansi Investasi</strong> — berdasarkan SAK EP, dengan perbandingan SAK ETAP dan PSAK 71/IFRS 9.</p>
+    <p class="muted small">© 2026 · Dibuat untuk pembelajaran SMK Akuntansi</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
